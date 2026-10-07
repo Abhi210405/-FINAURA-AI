@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FINAURA AI — Autonomous Insurance & Finance Intelligence</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">F</div><div><b>FINAURA AI</b><span>FINANCE INTELLIGENCE</span></div></div>
+  <div class="nav-title">Workspace</div>
+  <div class="nav">
+    <button class="active" data-view="dashboard"><span>▦</span><span>Overview</span></button>
+    <button data-view="intake"><span>⇧</span><span>Case Intake</span></button>
+    <button data-view="review"><span>✓</span><span>Human Review</span></button>
+    <button data-view="ledger"><span>▤</span><span>Decision Ledger</span></button>
+    <button data-view="agents"><span>✦</span><span>AI Agents</span></button>
+  </div>
+  <div class="nav-title">Controls</div>
+  <div class="nav">
+    <button data-view="rules"><span>⚙</span><span>Rules & Thresholds</span></button>
+    <button data-view="api"><span>⌘</span><span>Integration API</span></button>
+  </div>
+  <div class="status"><span class="dot"></span>Prototype environment<br><span style="font-size:9px">Synthetic / simulated data only</span></div>
+</aside>
+
+<main class="main">
+<section id="dashboard" class="view active">
+  <div class="hero">
+    <div class="hero-chip">✦ FINAURA AI · Evidence-first autonomous finance</div>
+    <h2>Turn financial cases into explainable decisions.</h2>
+    <p>Submit a claim, audit case or suspicious transaction. FINAURA combines specialist agents, risk signals and deterministic rules — then shows exactly why the decision was made.</p>
+  </div>
+  <div class="top">
+    <div><h1>Autonomous Finance Command Center</h1><p>Evidence-first insurance claims, fraud detection and financial audit automation.</p></div>
+    <div class="top-actions"><button class="btn" onclick="showToast('Synthetic dataset refreshed')">↻ Refresh</button><button class="btn primary" onclick="switchView('intake')">+ New Case</button></div>
+  </div>
+  <div class="grid">
+    <div class="card metric"><div class="label">Cases Processed</div><div class="value" id="mCases">1,248</div><div class="trend">↑ 18.4% vs baseline</div></div>
+    <div class="card metric"><div class="label">Auto-Resolution Rate</div><div class="value">72%</div><div class="trend">Low-risk path</div></div>
+    <div class="card metric"><div class="label">Fraud Alerts</div><div class="value">86</div><div class="trend" style="color:var(--amber)">14 need review</div></div>
+    <div class="card metric"><div class="label">Audit Traceability</div><div class="value">100%</div><div class="trend">Evidence records linked</div></div>
+  </div>
+
+  <div class="layout">
+    <div class="card panel">
+      <div class="panel-head"><div><h2>End-to-End Decision Pipeline</h2><div class="sub">Hybrid AI + deterministic control flow</div></div><span class="badge low">Operational</span></div>
+      <div class="pipeline">
+        <div class="step"><b>1. Intake</b><span>Claims / docs / data</span></div><div class="arrow">→</div>
+        <div class="step"><b>2. Extract</b><span>OCR + validation</span></div><div class="arrow">→</div>
+        <div class="step"><b>3. Risk</b><span>Models + context</span></div><div class="arrow">→</div>
+        <div class="step"><b>4. Agents</b><span>Claims / Fraud / Audit</span></div><div class="arrow">→</div>
+        <div class="step"><b>5. Decision</b><span>Rules + confidence</span></div><div class="arrow">→</div>
+        <div class="step"><b>6. Review</b><span>Human if needed</span></div>
+      </div>
+      <div class="panel-head"><h2>Processing Activity</h2><span class="sub">Last 7 days</span></div>
+      <div class="chart">
+        <div class="bar" style="height:48%"><span>Mon</span></div><div class="bar" style="height:62%"><span>Tue</span></div><div class="bar" style="height:55%"><span>Wed</span></div><div class="bar" style="height:78%"><span>Thu</span></div><div class="bar" style="height:70%"><span>Fri</span></div><div class="bar" style="height:88%"><span>Sat</span></div><div class="bar" style="height:96%"><span>Sun</span></div>
+      </div>
+    </div>
+
+    <div class="card panel">
+      <div class="panel-head"><div><h2>Agent Health</h2><div class="sub">Structured outputs from specialist agents</div></div><span class="badge low">7/7 ready</span></div>
+      <div class="agent-grid">
+        <div class="agent"><div class="topline"><span>Intake Agent</span><span class="badge low">Ready</span></div><small>Classification & normalization</small><div class="progress"><i style="width:94%"></i></div></div>
+        <div class="agent"><div class="topline"><span>Claims Agent</span><span class="badge low">Ready</span></div><small>Coverage & payout checks</small><div class="progress"><i style="width:91%"></i></div></div>
+        <div class="agent"><div class="topline"><span>Fraud Agent</span><span class="badge low">Ready</span></div><small>Anomaly & duplicate signals</small><div class="progress"><i style="width:88%"></i></div></div>
+        <div class="agent"><div class="topline"><span>Audit Agent</span><span class="badge low">Ready</span></div><small>Transaction evidence</small><div class="progress"><i style="width:96%"></i></div></div>
+        <div class="agent"><div class="topline"><span>Compliance</span><span class="badge low">Ready</span></div><small>Rules & mandatory controls</small><div class="progress"><i style="width:93%"></i></div></div>
+        <div class="agent"><div class="topline"><span>Explainability</span><span class="badge low">Ready</span></div><small>Factors & evidence package</small><div class="progress"><i style="width:97%"></i></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="card panel">
+      <div class="panel-head"><div><h2>Recent Cases</h2><div class="sub">Synthetic demonstration cases</div></div><button class="btn" onclick="switchView('intake')">Open intake</button></div>
+      <table><thead><tr><th>Case</th><th>Type</th><th>Risk</th><th>Decision</th><th></th></tr></thead>
+      <tbody id="caseTable"></tbody></table>
+    </div>
+    <div class="card panel">
+      <div class="panel-head"><div><h2>Human Review Queue</h2><div class="sub">High-risk / ambiguous cases</div></div><span class="badge high">3 pending</span></div>
+      <div class="review-list" id="reviewList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="intake" class="view">
+  <div class="top"><div><h1>Case Intake & Analysis</h1><p>Submit a synthetic claim or financial review case and run the decision pipeline.</p></div></div>
+  <div class="case-wrap">
+    <div class="card panel">
+      <div class="notice">Demo only: this prototype uses simulated data and does not execute real financial transfers, issue policies, or provide regulatory approval.</div>
+      <div class="diff">
+        <b>⭐ Differentiator — Evidence Passport</b>
+        <p>Instead of returning only a risk score, FINAURA creates a compact decision passport: risk signal + rule check + evidence source + confidence + human-review trigger.</p>
+      </div>
+      <div class="case-form" style="margin-top:13px">
+        <div class="field"><label>Case ID</label><input id="caseId" value="CLM-2026-1049"></div>
+        <div class="field"><label>Workflow</label><select id="workflow"><option>Insurance Claim</option><option>Fraud / Anomaly Review</option><option>Financial Audit</option></select></div>
+        <div class="field"><label>Claim / Transaction Amount (₹)</label><input id="amount" type="number" value="185000"></div>
+        <div class="field"><label>Customer History</label><select id="history"><option>Normal</option><option>Repeated claims</option><option>High-risk pattern</option></select></div>
+        <div class="field"><label>Documents</label><select id="docs"><option>Complete & consistent</option><option>Missing evidence</option><option>Contradictory evidence</option></select></div>
+        <div class="field"><label>Transaction Pattern</label><select id="pattern"><option>Normal</option><option>Unusual value</option><option>Duplicate / suspicious</option></select></div>
+        <div class="field full"><label>Case Description / User Input</label><textarea id="caseDescription" placeholder="Example: Customer submitted a health claim of ₹185000. Previous claim was 4 months ago and one invoice is missing.">Customer submitted a synthetic claim for review.</textarea><div class="input-preview">Your text is used by the prototype to add <b>context signals</b> to the deterministic demo analysis.</div></div>
+        <div class="field full"><label>Case Notes</label><textarea id="notes">Synthetic case submitted for FINAURA AI demonstration.</textarea></div>
+        <div class="full"><button class="btn primary" onclick="runAnalysis()">✦ Run FINAURA Analysis</button></div>
+      </div>
+    </div>
+    <div class="card panel">
+      <div class="panel-head"><div><h2>Decision Output</h2><div class="sub">Explainable hybrid decisioning</div></div><span id="decisionBadge" class="badge review">Awaiting analysis</span></div>
+      <div class="score"><div class="ring" id="riskRing"><b id="riskScore">--</b></div><div><div style="font-size:12px;color:var(--muted)">Risk / confidence profile</div><div id="decisionText" style="font-size:19px;font-weight:800;margin-top:4px">Run the pipeline</div><div id="confidence" class="sub" style="margin-top:5px">Evidence will appear here.</div></div></div>
+      <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+      <h2 style="font-size:14px">Evidence Passport</h2>
+      <div class="passport" id="passport">
+        <div class="passport-card"><b>Risk Signal</b><span>Waiting for analysis</span></div>
+        <div class="passport-card"><b>Rule Gate</b><span>Waiting for analysis</span></div>
+        <div class="passport-card"><b>Evidence</b><span>Waiting for analysis</span></div>
+        <div class="passport-card"><b>Escalation</b><span>Waiting for analysis</span></div>
+      </div>
+      <h2 style="font-size:14px;margin-top:16px">Evidence Package</h2>
+      <div class="evidence" id="evidence"><div><strong>Decision Engine</strong>No decision generated yet.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="review" class="view">
+  <div class="top"><div><h1>Human Review Queue</h1><p>Authorized reviewers can approve, reject, override or request more evidence.</p></div></div>
+  <div class="card panel"><div class="review-list" id="reviewPage"></div></div>
+</section>
+
+<section id="ledger" class="view">
+  <div class="top"><div><h1>Decision Ledger</h1><p>Traceable record of inputs, evidence, confidence, action and reviewer override.</p></div><button class="btn primary" onclick="showToast('Ledger export simulated')">Export Ledger</button></div>
+  <div class="card panel"><div class="ledger" id="ledgerList"></div></div>
+</section>
+
+<section id="agents" class="view">
+  <div class="top"><div><h1>AI Agent Control Room</h1><p>Specialized agents return structured outputs to the Decision Engine.</p></div></div>
+  <div class="card panel"><div class="agent-grid">
+    <div class="agent"><div class="topline"><span>Intake Agent</span><span class="badge low">Online</span></div><p>Classifies documents and normalizes incoming information.</p></div>
+    <div class="agent"><div class="topline"><span>Claims Agent</span><span class="badge low">Online</span></div><p>Checks coverage-related fields, completeness, consistency and payout constraints.</p></div>
+    <div class="agent"><div class="topline"><span>Fraud Agent</span><span class="badge low">Online</span></div><p>Detects duplicates, unusual values, contradictions and behavioral anomalies.</p></div>
+    <div class="agent"><div class="topline"><span>Audit Agent</span><span class="badge low">Online</span></div><p>Scans transaction populations and generates evidence-backed anomaly findings.</p></div>
+    <div class="agent"><div class="topline"><span>Compliance Agent</span><span class="badge low">Online</span></div><p>Checks configurable mandatory conditions and business controls.</p></div>
+    <div class="agent"><div class="topline"><span>Explainability Layer</span><span class="badge low">Online</span></div><p>Converts decisions into evidence, factors, confidence and an auditable explanation.</p></div>
+  </div></div>
+</section>
+
+<section id="rules" class="view">
+  <div class="top"><div><h1>Rules & Thresholds</h1><p>Deterministic controls protect against uncontrolled autonomous decisions.</p></div></div>
+  <div class="card panel">
+    <table><thead><tr><th>Control</th><th>Prototype Rule</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Auto-action threshold</td><td>Risk score below 35 and evidence complete</td><td><span class="badge low">Enabled</span></td></tr>
+      <tr><td>Human escalation</td><td>Risk score ≥ 65 or contradictory evidence</td><td><span class="badge high">Enabled</span></td></tr>
+      <tr><td>Fraud flag</td><td>Duplicate / suspicious transaction pattern</td><td><span class="badge high">Enabled</span></td></tr>
+      <tr><td>Audit trace</td><td>Every automated decision must have evidence</td><td><span class="badge low">Mandatory</span></td></tr>
+    </tbody></table>
+  </div>
+</section>
+
+<section id="api" class="view">
+  <div class="top"><div><h1>Integration API</h1><p>Prototype representation of the REST/JSON integration layer.</p></div></div>
+  <div class="card panel">
+    <div class="notice">Backend services in the proposal are planned around Python + FastAPI, PostgreSQL/pgvector, Redis and REST/JSON. This front-end demo simulates those calls locally.</div>
+    <pre style="background:#111827;color:#dce5f2;padding:18px;border-radius:10px;overflow:auto;font-size:11px">POST /api/v1/cases/analyze
+Content-Type: application/json
+
+{
+  "case_id": "CLM-2026-1049",
+  "workflow": "insurance_claim",
+  "amount": 185000,
+  "documents": "complete",
+  "history": "normal",
+  "pattern": "normal"
+}
+
+Response
+{
+  "risk_score": 22,
+  "confidence": 94,
+  "decision": "AUTO_APPROVE",
+  "requires_human_review": false,
+  "evidence": [...]
+}</pre>
+  </div>
+</section>
+</main>
+</div>
+
+<div class="modal" id="caseModal"><div class="modal-box"><div class="modal-head"><div><h2 id="modalTitle" style="margin:0;font-size:18px">Case</h2><p id="modalSub" class="sub"></p></div><button class="close" onclick="closeModal()">✕</button></div><div id="modalBody" style="margin-top:16px"></div></div></div>
+<div class="toast" id="toast"></div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
